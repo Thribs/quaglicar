@@ -1,0 +1,354 @@
+/* ==========================================================================
+   Quaglicar — folha de estilo compartilhada (global.css)
+   Réplica fiel do site atual. Mobile-first. Sem estilos inline.
+   ========================================================================== */
+
+/* Paleta e medidas do tema atual, em variaveis descritivas pt-BR */
+:root {
+  --cor-cabecalho: #103e4d;        /* fundo da barra do menu (verde-petroleo) */
+  --cor-texto-cabecalho: #fefefe;  /* texto sobre o cabecalho */
+  --cor-menu-link: #f0851d;        /* laranja dos links do menu */
+  --cor-menu-link-hover: #f7f7f7;  /* hover dos links do menu */
+  --cor-item-ativo: #2f5aae;       /* item de menu da pagina atual / acento azul */
+  --cor-acento-azul: #2f5aae;      /* acento primario */
+  --cor-fundo: #ffffff;            /* fundo do site */
+  --cor-fundo-claro: #f4f5f7;      /* fundo de secoes claras */
+  --cor-texto: #272626;            /* texto padrao */
+  --largura-maxima-conteudo: 1200px;
+  --largura-maxima-logo: 160px;
+  --fonte-padrao: Arial, Helvetica, sans-serif;
+}
+
+/* Reset leve */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-padrao);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--cor-acento-azul);
+}
+
+/* ==========================================================================
+   Cabecalho e navegacao
+   ========================================================================== */
+.cabecalho-site {
+  background-color: var(--cor-cabecalho);
+  color: var(--cor-texto-cabecalho);
+}
+
+.cabecalho-conteudo {
+  max-width: var(--largura-maxima-conteudo);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cabecalho-logo {
+  width: var(--largura-maxima-logo);
+  max-width: var(--largura-maxima-logo);
+}
+
+.menu-principal {
+  width: 100%;
+}
+
+.menu-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+}
+
+.menu-link {
+  color: var(--cor-menu-link);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 0.35rem 0.25rem;
+  display: inline-block;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: var(--cor-menu-link-hover);
+}
+
+/* item da pagina atual */
+.menu-link-ativo {
+  color: var(--cor-item-ativo);
+  border-bottom: 2px solid var(--cor-item-ativo);
+}
+
+/* ==========================================================================
+   Conteudo principal
+   ========================================================================== */
+.conteudo-principal {
+  max-width: var(--largura-maxima-conteudo);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.titulo-pagina {
+  color: var(--cor-acento-azul);
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.titulo-secao {
+  color: var(--cor-acento-azul);
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+/* Faixa da frase no topo do inicio */
+.faixa-frase {
+  width: 100%;
+  margin: 0 auto 1rem;
+}
+
+.faixa-frase img {
+  width: 100%;
+}
+
+/* Banners de destaque */
+.banners-destaque {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.banners-destaque img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   Grid de servicos (Inicio)
+   ========================================================================== */
+.grade-servicos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.cartao-servico {
+  background-color: var(--cor-fundo-claro);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-servico img {
+  width: 100%;
+}
+
+.cartao-servico-acao {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Botao Solicitar / Fale conosco (estilo WhatsApp) */
+.botao-solicitar {
+  display: inline-block;
+  background-color: var(--cor-menu-link);
+  color: var(--cor-texto-cabecalho);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.65rem 1.75rem;
+  border-radius: 999px;
+}
+
+.botao-solicitar:hover,
+.botao-solicitar:focus {
+  background-color: var(--cor-acento-azul);
+  color: var(--cor-texto-cabecalho);
+}
+
+/* ==========================================================================
+   Galeria de feedbacks
+   ========================================================================== */
+.galeria-feedbacks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.galeria-feedbacks figure {
+  margin: 0;
+}
+
+.galeria-feedbacks img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Historia
+   ========================================================================== */
+.texto-historia {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.texto-historia p {
+  margin: 1rem 0;
+  text-align: justify;
+}
+
+.imagens-historia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.imagens-historia img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.imagem-historia-larga {
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.imagem-historia-larga img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   Contato
+   ========================================================================== */
+.bloco-contato {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bloco-contato img {
+  width: 100%;
+  max-width: 640px;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
+
+.dados-contato {
+  font-size: 1.15rem;
+  margin: 1rem 0 2rem;
+}
+
+.dados-contato a {
+  color: var(--cor-acento-azul);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Aviso "Em breve" (Nossa equipe)
+   ========================================================================== */
+.aviso-em-breve {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--cor-texto);
+}
+
+.aviso-em-breve p {
+  font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   Rodape
+   ========================================================================== */
+.rodape-site {
+  background-color: var(--cor-cabecalho);
+  color: var(--cor-texto-cabecalho);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+}
+
+.rodape-site a {
+  color: var(--cor-menu-link);
+  text-decoration: none;
+}
+
+.rodape-site a:hover,
+.rodape-site a:focus {
+  color: var(--cor-menu-link-hover);
+}
+
+/* ==========================================================================
+   Responsivo — telas maiores
+   ========================================================================== */
+@media (min-width: 600px) {
+  .cabecalho-conteudo {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .menu-principal {
+    width: auto;
+  }
+
+  .grade-servicos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeria-feedbacks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .banners-destaque {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .imagens-historia {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .grade-servicos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .galeria-feedbacks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
