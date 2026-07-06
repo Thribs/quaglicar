@@ -30,10 +30,16 @@ html {
 body {
   margin: 0;
   font-family: var(--fonte-padrao);
-  color: var(--branco);
-  /* fundo petróleo no site inteiro — é o que dá o tom "azul" do original */
-  background-color: var(--verde-petroleo);
+  /* Padrão = páginas internas: corpo CLARO (como no original — cabeçalho/rodapé é que são escuros) */
+  color: var(--grafite);
+  background-color: var(--branco);
   line-height: 1.5;
+}
+
+/* Início: corpo ESCURO (petróleo) — no original as artes escuras preenchem a home e dão o tom "azul" */
+body.pagina-inicio {
+  color: var(--branco);
+  background-color: var(--verde-petroleo);
 }
 
 img {
@@ -43,6 +49,10 @@ img {
 }
 
 a {
+  color: var(--azul);
+}
+
+body.pagina-inicio a {
   color: var(--laranja);
 }
 
@@ -118,7 +128,8 @@ a {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  background-color: rgba(0, 0, 0, 0.18);
+  /* barra petróleo SÓLIDA + moldura laranja (igual ao original) — lê bem em corpo claro ou escuro */
+  background-color: var(--verde-petroleo);
   border: 2px solid var(--laranja);
   border-radius: 6px;
   padding: 0.85rem 1rem;
@@ -432,7 +443,7 @@ a {
 .aviso-em-breve {
   text-align: center;
   padding: 4rem 1rem;
-  color: var(--branco);
+  color: var(--grafite);
 }
 
 .aviso-em-breve p {
