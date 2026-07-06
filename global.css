@@ -30,16 +30,11 @@ html {
 body {
   margin: 0;
   font-family: var(--fonte-padrao);
-  /* Padrão = páginas internas: corpo CLARO (como no original — cabeçalho/rodapé é que são escuros) */
+  /* Fundo BRANCO no site inteiro (como o original). O tom "azul" vem das IMAGENS e das bandas de
+     texto (petróleo) que substituem o texto das artes — não do fundo da página. */
   color: var(--grafite);
   background-color: var(--branco);
   line-height: 1.5;
-}
-
-/* Início: corpo ESCURO (petróleo) — no original as artes escuras preenchem a home e dão o tom "azul" */
-body.pagina-inicio {
-  color: var(--branco);
-  background-color: var(--verde-petroleo);
 }
 
 img {
@@ -50,10 +45,6 @@ img {
 
 a {
   color: var(--azul);
-}
-
-body.pagina-inicio a {
-  color: var(--laranja);
 }
 
 /* ==========================================================================
@@ -142,24 +133,19 @@ body.pagina-inicio a {
   margin: 2rem 0 1rem;
 }
 
-/* Hero cinematográfico do início — o slogan como TEXTO (h1), imitando a arte em imagem do original.
-   Fundo: a própria faixa cinematográfica (sem o texto) + escurecimento pra leitura. */
+/* Hero do início — o slogan como TEXTO (h1) numa banda petróleo (elemento de texto que substitui a
+   arte em imagem). Sem foto de fundo: a imagem borrada anterior ficava com fantasma do texto. */
 .hero-frase {
   margin: 1rem 0 2rem;
   padding: 2.75rem 1rem;
   text-align: center;
-  color: #eaf1f3;
+  color: var(--branco);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.28em;
   font-size: clamp(0.85rem, 2.4vw, 1.6rem);
   border-radius: 6px;
-  background-color: #0a2a35;
-  background-image: linear-gradient(90deg, rgba(10, 42, 53, 0.55), rgba(10, 42, 53, 0.15) 45%, rgba(240, 133, 29, 0.18)),
-    url("imagens/hero-frase-fundo.jpg");
-  background-size: cover;
-  background-position: center;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  background-color: var(--verde-petroleo);
 }
 
 /* Destaques — mesma estrutura de card dos servicos, sem botao */
@@ -343,11 +329,7 @@ body.pagina-inicio a {
   padding: 3.25rem 1rem;
   margin: 1rem 0 2rem;
   border-radius: 6px;
-  background-color: #0a2a35;
-  background-image: linear-gradient(rgba(10, 42, 53, 0.55), rgba(10, 42, 53, 0.78)),
-    url("imagens/hero-frase-fundo.jpg");
-  background-size: cover;
-  background-position: center;
+  background-color: var(--verde-petroleo);
 }
 
 .hero-historia-titulo {
