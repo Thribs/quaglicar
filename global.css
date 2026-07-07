@@ -35,6 +35,11 @@ body {
   color: var(--grafite);
   background-color: var(--branco);
   line-height: 1.5;
+  /* Sticky footer: coluna com a altura da tela; o conteúdo estica e empurra o rodapé pro fim
+     mesmo em página curta (contato, equipe). */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -112,6 +117,8 @@ a {
   max-width: 100%;
   margin: 0;
   padding: 0.5rem;
+  /* cresce pra ocupar a sobra e empurrar o rodapé pro fim da tela */
+  flex: 1;
 }
 
 /* Título de página: barra petróleo com moldura laranja (igual às faixas de título do original) */
@@ -148,7 +155,7 @@ a {
   border-radius: 6px;
   /* fundo cinematográfico feito pelo Thiago no Gemini (petróleo como reserva) */
   background-color: #0e2f3b;
-  background-image: url("imagens/brilho-cinematografico.png");
+  background-image: url("imagens/brilho-cinematografico.jpg");
   background-size: cover;
   background-position: center;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
@@ -192,6 +199,9 @@ a {
 
 .cartao-servico img {
   width: 100%;
+  /* reserva o espaço da foto (proporção fixa) -> sem layout shift ao carregar; recorta pra preencher */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 /* Faixa de título (fica ACIMA da foto, como na arte original) */
@@ -375,6 +385,9 @@ a {
 
 .imagens-historia img {
   width: 100%;
+  /* reserva espaço (proporção fixa) pra não empurrar o texto ao carregar */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 8px;
 }
 
