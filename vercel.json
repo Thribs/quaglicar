@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "crons": [
+    {
+      "path": "/api/manter-controle-chaveiro-ativo",
+      "schedule": "0 6 * * *"
+    }
+  ],
   "cleanUrls": true,
   "framework": null,
   "headers": [
