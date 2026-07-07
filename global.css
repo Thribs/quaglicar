@@ -108,9 +108,10 @@ a {
    Conteudo principal
    ========================================================================== */
 .conteudo-principal {
-  max-width: var(--largura-maxima-conteudo);
-  margin: 0 auto;
-  padding: 1rem;
+  /* Margens laterais mínimas — o original é praticamente sem margem (conteúdo quase de borda a borda) */
+  max-width: 100%;
+  margin: 0;
+  padding: 0.5rem;
 }
 
 /* Título de página: barra petróleo com moldura laranja (igual às faixas de título do original) */
@@ -139,13 +140,18 @@ a {
   margin: 1rem 0 2rem;
   padding: 2.75rem 1rem;
   text-align: center;
-  color: var(--branco);
+  color: #eaf1f3;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.28em;
   font-size: clamp(0.85rem, 2.4vw, 1.6rem);
   border-radius: 6px;
-  background-color: var(--verde-petroleo);
+  /* fundo cinematográfico feito pelo Thiago no Gemini (petróleo como reserva) */
+  background-color: #0e2f3b;
+  background-image: url("imagens/brilho-cinematografico.png");
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* Destaques — mesma estrutura de card dos servicos, sem botao */
@@ -166,8 +172,9 @@ a {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  /* auto-fit: os cards preenchem a largura e a última fileira estica — sem coluna vazia nem item solto */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
 }
 
 /* Card = recriação da arte original: faixa de título (petróleo) + foto + faixa de descrição (petróleo).
@@ -384,28 +391,53 @@ a {
 /* ==========================================================================
    Contato
    ========================================================================== */
+/* Contato: informações à esquerda e mapa à direita (horizontal, como o original) */
 .bloco-contato {
-  text-align: center;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
   margin: 0 auto;
 }
 
-.bloco-contato img {
-  width: 100%;
-  max-width: 640px;
-  margin: 1rem auto;
+.contato-info {
+  background-color: var(--cinza-claro);
   border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+.contato-rotulo {
+  color: var(--verde-petroleo);
+  font-size: 1.1rem;
+  margin: 1rem 0 0.15rem;
+}
+
+.contato-rotulo:first-child {
+  margin-top: 0;
+}
+
+.contato-info p {
+  margin: 0 0 0.5rem;
+}
+
+.contato-info .botao-solicitar {
+  margin-top: 1rem;
 }
 
 /* Mapa do endereço (Google Maps) — presente no site atual */
 .mapa-contato {
   width: 100%;
-  max-width: 640px;
-  height: 320px;
-  margin: 1.5rem auto 0;
+  height: 100%;
+  min-height: 340px;
   border: 0;
   border-radius: 8px;
   display: block;
+}
+
+@media (min-width: 800px) {
+  .bloco-contato {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .dados-contato {
@@ -466,10 +498,6 @@ a {
     width: auto;
   }
 
-  .grade-servicos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .grade-depoimentos {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -484,10 +512,6 @@ a {
 }
 
 @media (min-width: 900px) {
-  .grade-servicos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .grade-depoimentos {
     grid-template-columns: repeat(3, 1fr);
   }
