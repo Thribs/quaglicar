@@ -35,6 +35,11 @@ body {
   color: var(--grafite);
   background-color: var(--branco);
   line-height: 1.5;
+  /* Sticky footer: coluna com a altura da tela; o conteúdo estica e empurra o rodapé pro fim
+     mesmo em página curta (contato, equipe). */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -112,6 +117,8 @@ a {
   max-width: 100%;
   margin: 0;
   padding: 0.5rem;
+  /* cresce pra ocupar a sobra e empurrar o rodapé pro fim da tela */
+  flex: 1;
 }
 
 /* Título de página: barra petróleo com moldura laranja (igual às faixas de título do original) */
