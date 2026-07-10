@@ -30,9 +30,16 @@ html {
 body {
   margin: 0;
   font-family: var(--fonte-padrao);
+  /* Fundo BRANCO no site inteiro (como o original). O tom "azul" vem das IMAGENS e das bandas de
+     texto (petróleo) que substituem o texto das artes — não do fundo da página. */
   color: var(--grafite);
   background-color: var(--branco);
   line-height: 1.5;
+  /* Sticky footer: coluna com a altura da tela; o conteúdo estica e empurra o rodapé pro fim
+     mesmo em página curta (contato, equipe). */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -106,31 +113,52 @@ a {
    Conteudo principal
    ========================================================================== */
 .conteudo-principal {
-  max-width: var(--largura-maxima-conteudo);
-  margin: 0 auto;
-  padding: 1rem;
+  /* Margens laterais mínimas — o original é praticamente sem margem (conteúdo quase de borda a borda) */
+  max-width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  /* cresce pra ocupar a sobra e empurrar o rodapé pro fim da tela */
+  flex: 1;
 }
 
+/* Título de página: barra petróleo com moldura laranja (igual às faixas de título do original) */
 .titulo-pagina {
-  color: var(--azul);
+  color: var(--branco);
   text-align: center;
-  margin: 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  /* barra petróleo SÓLIDA + moldura laranja (igual ao original) — lê bem em corpo claro ou escuro */
+  background-color: var(--verde-petroleo);
+  border: 2px solid var(--laranja);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  margin: 1.5rem 0 2rem;
 }
 
 .titulo-secao {
-  color: var(--azul);
+  color: var(--branco);
   text-align: center;
   margin: 2rem 0 1rem;
 }
 
-/* Faixa da frase no topo do inicio */
-.faixa-frase {
-  width: 100%;
-  margin: 0 auto 1rem;
-}
-
-.faixa-frase img {
-  width: 100%;
+/* Hero do início — o slogan como TEXTO (h1) numa banda petróleo (elemento de texto que substitui a
+   arte em imagem). Sem foto de fundo: a imagem borrada anterior ficava com fantasma do texto. */
+.hero-frase {
+  margin: 1rem 0 2rem;
+  padding: 2.75rem 1rem;
+  text-align: center;
+  color: #eaf1f3;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: clamp(0.85rem, 2.4vw, 1.6rem);
+  border-radius: 6px;
+  /* fundo cinematográfico feito pelo Thiago no Gemini (petróleo como reserva) */
+  background-color: #0e2f3b;
+  background-image: url("imagens/brilho-cinematografico.jpg");
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* Destaques — mesma estrutura de card dos servicos, sem botao */
@@ -151,42 +179,54 @@ a {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  /* auto-fit: os cards preenchem a largura e a última fileira estica — sem coluna vazia nem item solto */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
 }
 
+/* Card = recriação da arte original: faixa de título (petróleo) + foto + faixa de descrição (petróleo).
+   Fundo petróleo e texto branco pra casar com o visual "azul" do site atual. */
 .cartao-servico {
-  background-color: var(--cinza-claro);
-  border-radius: 8px;
+  background-color: var(--verde-petroleo);
+  color: var(--branco);
+  border-radius: 6px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .cartao-servico img {
   width: 100%;
+  /* reserva o espaço da foto (proporção fixa) -> sem layout shift ao carregar; recorta pra preencher */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
-/* Texto extraido das artes (antes embutido na imagem), agora HTML real */
-.cartao-servico-texto {
-  padding: 1rem 1rem 0.75rem;
+/* Faixa de título (fica ACIMA da foto, como na arte original) */
+.cartao-servico-titulo {
+  color: var(--branco);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.85rem 1rem;
+}
+
+/* Faixa de descrição (fica ABAIXO da foto, texto claro em itálico, como na arte) */
+.cartao-servico-descricao {
+  color: var(--branco);
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
   flex: 1 1 auto;
 }
 
-.cartao-servico-titulo {
-  color: var(--verde-petroleo);
-  font-size: 1.15rem;
-  margin: 0 0 0.5rem;
-}
-
-.cartao-servico-descricao {
-  margin: 0;
-  color: var(--grafite);
-}
-
 .cartao-servico-acao {
-  padding: 0.25rem 1rem 1rem;
+  padding: 0.25rem 1rem 1.15rem;
   text-align: center;
 }
 
@@ -302,6 +342,31 @@ a {
 /* ==========================================================================
    Historia
    ========================================================================== */
+/* Hero elegante: título e subtítulo serifados sobre o fundo escuro (como no original) */
+.hero-historia {
+  text-align: center;
+  padding: 3.25rem 1rem;
+  margin: 1rem 0 2rem;
+  border-radius: 6px;
+  background-color: var(--verde-petroleo);
+}
+
+.hero-historia-titulo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--branco);
+  margin: 0 0 0.5rem;
+}
+
+.hero-historia-subtitulo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: #dfe8ea;
+  font-size: clamp(1rem, 2.6vw, 1.45rem);
+  margin: 0;
+}
+
 .texto-historia {
   max-width: 800px;
   margin: 0 auto;
@@ -322,6 +387,9 @@ a {
 
 .imagens-historia img {
   width: 100%;
+  /* reserva espaço (proporção fixa) pra não empurrar o texto ao carregar */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -338,17 +406,53 @@ a {
 /* ==========================================================================
    Contato
    ========================================================================== */
+/* Contato: informações à esquerda e mapa à direita (horizontal, como o original) */
 .bloco-contato {
-  text-align: center;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
   margin: 0 auto;
 }
 
-.bloco-contato img {
-  width: 100%;
-  max-width: 640px;
-  margin: 1rem auto;
+.contato-info {
+  background-color: var(--cinza-claro);
   border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+.contato-rotulo {
+  color: var(--verde-petroleo);
+  font-size: 1.1rem;
+  margin: 1rem 0 0.15rem;
+}
+
+.contato-rotulo:first-child {
+  margin-top: 0;
+}
+
+.contato-info p {
+  margin: 0 0 0.5rem;
+}
+
+.contato-info .botao-solicitar {
+  margin-top: 1rem;
+}
+
+/* Mapa do endereço (Google Maps) — presente no site atual */
+.mapa-contato {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: 0;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (min-width: 800px) {
+  .bloco-contato {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .dados-contato {
@@ -409,10 +513,6 @@ a {
     width: auto;
   }
 
-  .grade-servicos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .grade-depoimentos {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -427,10 +527,6 @@ a {
 }
 
 @media (min-width: 900px) {
-  .grade-servicos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .grade-depoimentos {
     grid-template-columns: repeat(3, 1fr);
   }
