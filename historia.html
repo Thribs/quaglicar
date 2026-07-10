@@ -8,7 +8,6 @@
       name="description"
       content="Conheça a história da Quaglicar, chaveiro automotivo em Juiz de Fora/MG, fundada em 1954 e conduzida há gerações pela família Quaglio."
     />
-    <link rel="icon" href="imagens/favicon.png" />
     <link rel="stylesheet" href="global.css" />
   </head>
   <body>
@@ -21,21 +20,18 @@
         />
         <nav class="menu-principal" aria-label="Menu principal">
           <ul class="menu-lista">
-            <li><a class="menu-link" href="/">Início</a></li>
-            <li><a class="menu-link" href="/feedbacks">Feedbacks</a></li>
+            <li><a class="menu-link" href="/" data-acao="navegar-para-inicio">Início</a></li>
+            <li><a class="menu-link" href="/feedbacks" data-acao="navegar-para-feedbacks">Feedbacks</a></li>
             <li><a class="menu-link menu-link-ativo" href="/historia" aria-current="page">História</a></li>
-            <li><a class="menu-link" href="/contato">Contato</a></li>
-            <li><a class="menu-link" href="/nossa-equipe">Nossa equipe</a></li>
+            <li><a class="menu-link" href="/contato" data-acao="navegar-para-contato">Contato</a></li>
+            <li><a class="menu-link" href="/nossa-equipe" data-acao="navegar-para-nossa-equipe">Nossa equipe</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main class="conteudo-principal">
-      <header class="hero-historia">
-        <h1 class="hero-historia-titulo">Nossa História</h1>
-        <p class="hero-historia-subtitulo">Mais de 69 anos de experiência e profissionalismo</p>
-      </header>
+      <h1 class="titulo-pagina">Histórico Quaglicar</h1>
 
       <article class="texto-historia">
         <p>
@@ -137,11 +133,14 @@
         feito com responsabilidade por
         <a
           href="https://thiagoribeirosilva.vercel.app"
+          data-acao="visitar-perfil-thiago"
           target="_blank"
           rel="noopener noreferrer"
           ><strong>Thiago Ribeiro Silva</strong></a
         >
       </p>
     </footer>
+    <script defer src="/analise-visitas.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </body>
 </html>
