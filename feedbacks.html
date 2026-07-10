@@ -6,8 +6,7 @@
     <title>Feedbacks — Quaglicar Chaveiro Automotivo</title>
     <meta
       name="description"
-      content="Depoimentos e feedbacks de clientes da Quaglicar, chaveiro automotivo em Juiz de Fora/MG."
-    />
+      content="Depoimentos e feedbacks de clientes da Quaglicar, chaveiro automotivo em Juiz de Fora/MG." />
     <link rel="stylesheet" href="global.css" />
   </head>
   <body>
@@ -16,15 +15,21 @@
         <img
           class="cabecalho-logo"
           src="imagens/logo-quaglicar.jpg"
-          alt="Logotipo da Quaglicar, chaveiro automotivo"
-        />
+          alt="Logotipo da Quaglicar, chaveiro automotivo" />
         <nav class="menu-principal" aria-label="Menu principal">
           <ul class="menu-lista">
-            <li><a class="menu-link" href="/">Início</a></li>
-            <li><a class="menu-link menu-link-ativo" href="/feedbacks" aria-current="page">Feedbacks</a></li>
-            <li><a class="menu-link" href="/historia">História</a></li>
-            <li><a class="menu-link" href="/contato">Contato</a></li>
-            <li><a class="menu-link" href="/nossa-equipe">Nossa equipe</a></li>
+            <li><a class="menu-link" href="/" data-acao="navegar-para-inicio">Início</a></li>
+            <li>
+              <a
+                class="menu-link menu-link-ativo"
+                href="/feedbacks"
+                aria-current="page"
+                >Feedbacks</a
+              >
+            </li>
+            <li><a class="menu-link" href="/historia" data-acao="navegar-para-historia">História</a></li>
+            <li><a class="menu-link" href="/contato" data-acao="navegar-para-contato">Contato</a></li>
+            <li><a class="menu-link" href="/nossa-equipe" data-acao="navegar-para-nossa-equipe">Nossa equipe</a></li>
           </ul>
         </nav>
       </div>
@@ -35,20 +40,23 @@
 
       <div class="grade-depoimentos" aria-label="Depoimentos de clientes">
         <a
-          href="LINK_REVISAO_PENDENTE"
+        href="LINK_REVISAO_PENDENTE"
+        data-acao="visitar-depoimento"
           target="_blank"
           rel="noopener"
-          class="testemunho"
-        >
-          <h3 class="depoimento-nome" data-tooltip="ver original">Tiago Guilarducci</h3>
-          <p class="depoimento-avaliacoes">Local Guide · 126 avaliações · 71 fotos</p>
+          class="testemunho">
+          <h3 class="depoimento-nome" data-tooltip="ver original">
+            Tiago Guilarducci
+          </h3>
+          <p class="depoimento-avaliacoes">
+            Local Guide · 126 avaliações · 71 fotos
+          </p>
           <p class="depoimento-estrelas" aria-label="5 de 5 estrelas">
             <span aria-hidden="true">★★★★★</span>
           </p>
           <blockquote
             class="depoimento-texto"
-            data-original="Estabelecimento de referência na área de atua, ou seja, vidros e fechaduras de veículos. Funcionários experiência e devidamente treinados diagnosticam com rapidez os problemas e passam orçamentos precisos. Os preços cobrados são razoáveis pelos serviços prestados, que dificilmente resultam em retorno do consumidor. Os serviços possuem garantia e a honestidade caracterizam os funcionários do local. Recomendo."
-          >
+            data-original="Estabelecimento de referência na área de atua, ou seja, vidros e fechaduras de veículos. Funcionários experiência e devidamente treinados diagnosticam com rapidez os problemas e passam orçamentos precisos. Os preços cobrados são razoáveis pelos serviços prestados, que dificilmente resultam em retorno do consumidor. Os serviços possuem garantia e a honestidade caracterizam os funcionários do local. Recomendo.">
             Estabelecimento de referência na área de atuação, ou seja, vidros e
             fechaduras de veículos. Funcionários experiência e devidamente
             treinados diagnosticam com rapidez os problemas e passam orçamentos
@@ -61,62 +69,71 @@
 
         <a
           href="LINK_REVISAO_PENDENTE"
+          data-acao="visitar-depoimento"
           target="_blank"
           rel="noopener"
-          class="testemunho"
-        >
-          <h3 class="depoimento-nome" data-tooltip="ver original">Alencar Júnior</h3>
-          <p class="depoimento-avaliacoes">Local Guide · 109 avaliações · 15 fotos</p>
+          class="testemunho">
+          <h3 class="depoimento-nome" data-tooltip="ver original">
+            Alencar Júnior
+          </h3>
+          <p class="depoimento-avaliacoes">
+            Local Guide · 109 avaliações · 15 fotos
+          </p>
           <p class="depoimento-estrelas" aria-label="5 de 5 estrelas">
             <span aria-hidden="true">★★★★★</span>
           </p>
           <blockquote
             class="depoimento-texto"
-            data-original="Excelente muito honesto, desmontou a porta toda do carro, era apenas uma peça desencaixada, encaixou e não cobrou nada por isso, insisti em pagar pela desmontagem e não aceitou. Profissional raro hoje dia"
-          >
-            Excelente, muito honesto, desmontou a porta toda do carro, era apenas
-            uma peça desencaixada, encaixou e não cobrou nada por isso, insisti
-            em pagar pela desmontagem e não aceitou. Profissional raro hoje dia.
+            data-original="Excelente muito honesto, desmontou a porta toda do carro, era apenas uma peça desencaixada, encaixou e não cobrou nada por isso, insisti em pagar pela desmontagem e não aceitou. Profissional raro hoje dia">
+            Excelente, muito honesto, desmontou a porta toda do carro, era
+            apenas uma peça desencaixada, encaixou e não cobrou nada por isso,
+            insisti em pagar pela desmontagem e não aceitou. Profissional raro
+            hoje dia.
           </blockquote>
         </a>
 
         <a
           href="LINK_REVISAO_PENDENTE"
+          data-acao="visitar-depoimento"
           target="_blank"
           rel="noopener"
-          class="testemunho"
-        >
-          <h3 class="depoimento-nome" data-tooltip="ver original">Jose Guedim</h3>
-          <p class="depoimento-avaliacoes">Local Guide · 168 avaliações · 2 fotos</p>
+          class="testemunho">
+          <h3 class="depoimento-nome" data-tooltip="ver original">
+            Jose Guedim
+          </h3>
+          <p class="depoimento-avaliacoes">
+            Local Guide · 168 avaliações · 2 fotos
+          </p>
           <p class="depoimento-estrelas" aria-label="5 de 5 estrelas">
             <span aria-hidden="true">★★★★★</span>
           </p>
           <blockquote
             class="depoimento-texto"
-            data-original="Atenciosos. Me deram boa orientação para regularizar o vidro da porta do motorista. Aguardando peça chegar na Ford, para realizar o serviço. Primeira vez que fui só local indicado por um eletricista de minha confiança. Gostei muito do atendimento e organização do local"
-          >
-            Atenciosos. Me deram boa orientação para regularizar o vidro da porta
-            do motorista. Aguardando peça chegar na Ford, para realizar o
-            serviço. Primeira vez que fui só local indicado por um eletricista de
-            minha confiança. Gostei muito do atendimento e organização do local.
+            data-original="Atenciosos. Me deram boa orientação para regularizar o vidro da porta do motorista. Aguardando peça chegar na Ford, para realizar o serviço. Primeira vez que fui só local indicado por um eletricista de minha confiança. Gostei muito do atendimento e organização do local">
+            Atenciosos. Me deram boa orientação para regularizar o vidro da
+            porta do motorista. Aguardando peça chegar na Ford, para realizar o
+            serviço. Primeira vez que fui só local indicado por um eletricista
+            de minha confiança. Gostei muito do atendimento e organização do
+            local.
           </blockquote>
         </a>
 
         <a
           href="LINK_REVISAO_PENDENTE"
+          data-acao="visitar-depoimento"
           target="_blank"
           rel="noopener"
-          class="testemunho"
-        >
-          <h3 class="depoimento-nome" data-tooltip="ver original">Ramon Dutra</h3>
+          class="testemunho">
+          <h3 class="depoimento-nome" data-tooltip="ver original">
+            Ramon Dutra
+          </h3>
           <p class="depoimento-avaliacoes">6 avaliações · 2 fotos</p>
           <p class="depoimento-estrelas" aria-label="5 de 5 estrelas">
             <span aria-hidden="true">★★★★★</span>
           </p>
           <blockquote
             class="depoimento-texto"
-            data-original="Ótimo atendimento. Vieram até minha casa para resolver o problema no miolo da ignição do meu carro"
-          >
+            data-original="Ótimo atendimento. Vieram até minha casa para resolver o problema no miolo da ignição do meu carro">
             Ótimo atendimento. Vieram até minha casa para resolver o problema no
             miolo da ignição do meu carro.
           </blockquote>
@@ -124,29 +141,30 @@
 
         <a
           href="LINK_REVISAO_PENDENTE"
+          data-acao="visitar-depoimento"
           target="_blank"
           rel="noopener"
-          class="testemunho"
-        >
-          <h3 class="depoimento-nome" data-tooltip="ver original">Helder Almeida</h3>
+          class="testemunho">
+          <h3 class="depoimento-nome" data-tooltip="ver original">
+            Helder Almeida
+          </h3>
           <p class="depoimento-avaliacoes">13 avaliações</p>
           <p class="depoimento-estrelas" aria-label="5 de 5 estrelas">
             <span aria-hidden="true">★★★★★</span>
           </p>
           <blockquote
             class="depoimento-texto"
-            data-original="Pessoal com experiência, muito bons de serviço!"
-          >
+            data-original="Pessoal com experiência, muito bons de serviço!">
             Pessoal com experiência, muito bons de serviço!
           </blockquote>
         </a>
 
         <a
           href="LINK_REVISAO_PENDENTE"
+          data-acao="visitar-depoimento"
           target="_blank"
           rel="noopener"
-          class="testemunho"
-        >
+          class="testemunho">
           <h3 class="depoimento-nome" data-tooltip="ver original">Pedro Noe</h3>
           <p class="depoimento-avaliacoes">58 avaliações</p>
           <p class="depoimento-estrelas" aria-label="5 de 5 estrelas">
@@ -154,8 +172,7 @@
           </p>
           <blockquote
             class="depoimento-texto"
-            data-original="OTIMO ATENDIMENTO,PESSOAS SUPER EDUCADAS E COMPETENTES NO QUE SE PROPÕE A FAZER."
-          >
+            data-original="OTIMO ATENDIMENTO,PESSOAS SUPER EDUCADAS E COMPETENTES NO QUE SE PROPÕE A FAZER.">
             Ótimo atendimento, pessoas super educadas e competentes no que se
             propõe a fazer.
           </blockquote>
@@ -163,38 +180,44 @@
 
         <a
           href="LINK_REVISAO_PENDENTE"
+          data-acao="visitar-depoimento"
           target="_blank"
           rel="noopener"
-          class="testemunho"
-        >
-          <h3 class="depoimento-nome" data-tooltip="ver original">Josue Barbieri</h3>
-          <p class="depoimento-avaliacoes">Local Guide · 96 avaliações · 3 fotos</p>
+          class="testemunho">
+          <h3 class="depoimento-nome" data-tooltip="ver original">
+            Josue Barbieri
+          </h3>
+          <p class="depoimento-avaliacoes">
+            Local Guide · 96 avaliações · 3 fotos
+          </p>
           <p class="depoimento-estrelas" aria-label="4 de 5 estrelas">
             <span aria-hidden="true">★★★★☆</span>
           </p>
           <blockquote
             class="depoimento-texto"
-            data-original="Ótimo atendimento. O preço é um pouco alto."
-          >
+            data-original="Ótimo atendimento. O preço é um pouco alto.">
             Ótimo atendimento. O preço é um pouco alto.
           </blockquote>
         </a>
 
         <a
           href="LINK_REVISAO_PENDENTE"
+          data-acao="visitar-depoimento"
           target="_blank"
           rel="noopener"
-          class="testemunho"
-        >
-          <h3 class="depoimento-nome" data-tooltip="ver original">Rodrigo M Barbosa</h3>
-          <p class="depoimento-avaliacoes">Local Guide · 50 avaliações · 154 fotos</p>
+          class="testemunho">
+          <h3 class="depoimento-nome" data-tooltip="ver original">
+            Rodrigo M Barbosa
+          </h3>
+          <p class="depoimento-avaliacoes">
+            Local Guide · 50 avaliações · 154 fotos
+          </p>
           <p class="depoimento-estrelas" aria-label="5 de 5 estrelas">
             <span aria-hidden="true">★★★★★</span>
           </p>
           <blockquote
             class="depoimento-texto"
-            data-original="Fomos muito bem atendidos. Achei o trabalho muito bom e os funcionários bem honestos."
-          >
+            data-original="Fomos muito bem atendidos. Achei o trabalho muito bom e os funcionários bem honestos.">
             Fomos muito bem atendidos. Achei o trabalho muito bom e os
             funcionários bem honestos.
           </blockquote>
@@ -207,6 +230,7 @@
         feito com responsabilidade por
         <a
           href="https://thiagoribeirosilva.vercel.app"
+          data-acao="visitar-perfil-thiago"
           target="_blank"
           rel="noopener noreferrer"
           ><strong>Thiago Ribeiro Silva</strong></a
