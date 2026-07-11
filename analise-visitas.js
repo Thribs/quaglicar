@@ -4,7 +4,7 @@ if (typeof window === "undefined") {
   )
 }
 
-const vercelAnalytics = window.va ?? null
+// const vercelAnalytics = window.va ?? null
 
 function enfileirarEvento(tipo, corpo) {
   if (typeof tipo !== "string") {
@@ -17,15 +17,17 @@ function enfileirarEvento(tipo, corpo) {
       "parâmetro corpo inválido. Verifique se o programa está sendo executado em navegador de Internet",
     )
   }
-  if (Array.isArray(window.vaq) === false) {
-    window.vaq = []
-  }
-  window.vaq.push([tipo, corpo])
+  // @rro: vercel analytics não será usado porque viola a privacidade
+  // do usuário
+  // if (Array.isArray(window.vaq) === false) {
+  //   window.vaq = []
+  // }
+  // window.vaq.push([tipo, corpo])
 }
 
-if (typeof vercelAnalytics !== "function") {
-  window.va = enfileirarEvento
-}
+// if (typeof vercelAnalytics !== "function") {
+//   window.va = enfileirarEvento
+// }
 
 function registrarEvento(evento) {
   const acao = evento?.currentTarget?.dataset?.acao ?? null
@@ -40,10 +42,10 @@ function registrarEvento(evento) {
       "parâmetro caminho ausente. Verifique se o programa está sendo executado em navegador de Internet",
     )
   }
-  window.va("event", {
-    name: "clique" + "-" + acao,
-    caminho,
-  })
+  // window.va("event", {
+  //   name: "clique" + "-" + acao,
+  //   caminho,
+  // })
 }
 
 if (typeof document === "undefined") {
